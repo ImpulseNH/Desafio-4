@@ -45,6 +45,9 @@ La estrategia calcula una probabilidad de exploración cada vez que se retorna u
 ## Análisis de resultados
 ***
 c
+## Cómo ejecutar el programa
+***
+d
 ## Video explicativo
 ***
 Para una mejor comprensión del problema y su resolución, se adjunta un video explicativo en el siguiente [link]().
