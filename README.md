@@ -44,7 +44,9 @@ La estrategia calcula una probabilidad de exploración cada vez que se retorna u
 * _explore_probability = self.epsilon_min + (self.epsilon - self.epsilon_min) * np.exp(-self.epsilon_decay * decay_step)_
 ## Cómo ejecutar el programa
 ***
-d
+El código fue escrito y ejecutado a través de Google Colab, cuyo link es: [Desafío 4](https://colab.research.google.com/drive/1miI-82iaWqrZZuBoPvfki4pZPzNKjrib#scrollTo=JJTmP_MUXHZx)
+
+Al final del código se tienen dos entrenamientos renderizados, los cuales corresponden a entrenamientos con y sin Prioritized Experience Replay, a modo de poder realizar una comparación y sacar conclusiones.
 ## Análisis de resultados
 ***
 c
