@@ -26,7 +26,22 @@ El objetivo final dentro de este desafío es lograr, por medio de técnicas de A
 
 ## Descripción de la solución
 ***
-b
+Para este entorno de simulación se implementó la técnica de Aprendizaje Reforzado Deep Q-Learning por medio de una red neuronal (reemplazando la tabla Q). Por otro lado, para el entrenamiento se implementó la técnica de memoria Prioritized Experience Replay (PER), que a diferencia de Experience Replay, ésta prioriza las experiencias más significativas, ayudando a que el agente encuentre mejores estrategias para lograr el objetivo, que es avanzar.
+
+Para el entrenamiento los parámetros utilizados fueron los siguientes:
+
+**Cantidad de Episodios:** 20
+**Tamaño de memoria PER:** 20.000
+
+En cuanto a la estrategia de exploración, se utilizó Epsilon-Greedy con Decay, con los siguientes parámetros:
+
+**Epsilon:** 1
+**Epsilon mínimo:** 0.001
+**Epsilon Decay:** 0.0005
+
+La estrategia calcula una probabilidad de exploración cada vez que se retorna una acción, considerando un decay_step, que representa la cantidad de transiciones realizadas. Esto está representado en la siguiente fórmula:
+
+_explore_probability = self.epsilon_min + (self.epsilon - self.epsilon_min) * np.exp(-self.epsilon_decay * decay_step)_
 ## Análisis de resultados
 ***
 c
@@ -41,7 +56,7 @@ A continuación, tablas de coevaluación según estos criterios: [Criterios de c
 |                     | Esteban González | Carlos Núñez | Priscilla Riffo | Katherine Sepúlveda |
 | ------------------- | :--------------: | :----------: | :-------------: | :-----------------: |
 | Esteban González    | | | | |
-| Carlos Núñez        | | | | |
+| Carlos Núñez        |X| |X|X|
 | Priscilla Riffo     | | | | |
 | Katherine Sepúlveda | | | | |
 2. **Integración**
@@ -49,7 +64,7 @@ A continuación, tablas de coevaluación según estos criterios: [Criterios de c
 |                     | Esteban González | Carlos Núñez | Priscilla Riffo | Katherine Sepúlveda |
 | ------------------- | :--------------: | :----------: | :-------------: | :-----------------: |
 | Esteban González    | | | | |
-| Carlos Núñez        | | | | |
+| Carlos Núñez        |X| |X|X|
 | Priscilla Riffo     | | | | |
 | Katherine Sepúlveda | | | | |
 3. **Responsabilidad**
@@ -57,7 +72,7 @@ A continuación, tablas de coevaluación según estos criterios: [Criterios de c
 |                     | Esteban González | Carlos Núñez | Priscilla Riffo | Katherine Sepúlveda |
 | ------------------- | :--------------: | :----------: | :-------------: | :-----------------: |
 | Esteban González    | | | | |
-| Carlos Núñez        | | | | |
+| Carlos Núñez        |X| |X|X|
 | Priscilla Riffo     | | | | |
 | Katherine Sepúlveda | | | | |
 4. **Contribución**
@@ -65,7 +80,7 @@ A continuación, tablas de coevaluación según estos criterios: [Criterios de c
 |                     | Esteban González | Carlos Núñez | Priscilla Riffo | Katherine Sepúlveda |
 | ------------------- | :--------------: | :----------: | :-------------: | :-----------------: |
 | Esteban González    | | | | |
-| Carlos Núñez        | | | | |
+| Carlos Núñez        |X| |X|X|
 | Priscilla Riffo     | | | | |
 | Katherine Sepúlveda | | | | |
 5. **Resolución de conflictos**
@@ -73,6 +88,6 @@ A continuación, tablas de coevaluación según estos criterios: [Criterios de c
 |                     | Esteban González | Carlos Núñez | Priscilla Riffo | Katherine Sepúlveda |
 | ------------------- | :--------------: | :----------: | :-------------: | :-----------------: |
 | Esteban González    | | | | |
-| Carlos Núñez        | | | | |
+| Carlos Núñez        |X| |X|X|
 | Priscilla Riffo     | | | | |
 | Katherine Sepúlveda | | | | |
