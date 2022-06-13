@@ -8,7 +8,22 @@
 6. [Coevaluación](#coevaluación)
 ## Descripción del problema
 ***
-a
+Para este desafío se utilizó el ambiente Ant-V2 de Mujoco Environments. Este ambiente consta de una hormiga representada por un robot que posee un torso y 4 patas unidas a él. Cada pata, además, está dividida en 2 partes.
+
+El objetivo final dentro de este desafío es lograr, por medio de técnicas de Aprendizaje Reforzado, que la hormiga avance hacia la derecha a travez de la coordinación de sus 4 patas y torso a la vez, aplicando fuerza en forma de torques en cada una de sus partes.
+
+**Características del ambiente:**
+
+**Action Space:** en este problema, se utiliza un espacio de acción continuo. Cada acción se define por un vector de 8 elementos, cada uno representando las fuerzas de torque aplicadas a cada parte de la hormiga. Las fuerzas se representan en una magnitud que va del -1 al 1.
+
+**Observation Space:** cada estado se compone de los valores posicionales de cada parte de la hormiga (posición del torso en los ejes X, Y, Z, el ángulo del torso con respecto a los ejes y los ángulos entre cada parte), y la velocidad las velocidades (velocidad y velocidad angular del torso, y la velocidad angular de cada parte de la hormiga), además de las fuerzas de contacto externas como el suelo o la gravedad. En total, se tiene un estado representado con un *ndarray* de forma (111,).
+
+**Rewards:** el ambiente considera 4 recompensas: *survive_reward* (recompensa por mantenerse con vida), *forward_reward* (recompensa al movimiento, positivamente si es a la derecha), *ctrl_cost* (penaliza acciones muy grandes) y *contact_cost* (penaliza si las fuerzas de contacto son muy elevadas). El total se calcula como: *reward = alive survive_reward + forward_reward - ctrl_cost - contact_cost*.
+
+**Estado Inicial:** se comienza siempre con los valores (0.0, 0.0, 0.75, 1.0, 0.0 … 0.0) en el vector de estado, con un rango del -0.1 al 0.1 para agregar estocasticidad a cada episodio.
+
+**Estado Final:** se considera que un episodio ha llegado a su fin si su duración supera los 1000 timestep, algun valor ha dejado de ser finito o la orientación del torso en el eje Y se sale del rango 0.2 a 1.0.
+
 ## Descripción de la solución
 ***
 b
