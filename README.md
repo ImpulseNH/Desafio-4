@@ -42,12 +42,12 @@ En cuanto a la estrategia de exploración, se utilizó Epsilon-Greedy con Decay,
 La estrategia calcula una probabilidad de exploración cada vez que se retorna una acción, considerando un decay_step, que representa la cantidad de transiciones realizadas. Esto está representado en la siguiente fórmula:
 
 * _explore_probability = self.epsilon_min + (self.epsilon - self.epsilon_min) * np.exp(-self.epsilon_decay * decay_step)_
-## Análisis de resultados
-***
-c
 ## Cómo ejecutar el programa
 ***
 d
+## Análisis de resultados
+***
+c
 ## Video explicativo
 ***
 Para una mejor comprensión del problema y su resolución, se adjunta un video explicativo en el siguiente [link]().
