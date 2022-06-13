@@ -31,7 +31,7 @@ Para este entorno de simulación se implementó la técnica de Aprendizaje Refor
 Para el entrenamiento los parámetros utilizados fueron los siguientes:
 
 **Cantidad de Episodios:** 20
-**Tamaño de memoria PER:** 20.000
+**Tamaño de memoria para PER:** 20.000
 
 En cuanto a la estrategia de exploración, se utilizó Epsilon-Greedy con Decay, con los siguientes parámetros:
 
