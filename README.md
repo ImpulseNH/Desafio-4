@@ -43,7 +43,13 @@ La estrategia calcula una probabilidad de exploración cada vez que se retorna u
 ```
 explore_probability = self.epsilon_min + (self.epsilon - self.epsilon_min) * np.exp(-self.epsilon_decay * decay_step)
 ```
-Luego, se usa esta probabilidad de exploración para obtener acciones.
+Luego, se usa esta probabilidad de exploración para obtener acciones, de la siguiente forma:
+```
+if explore_probability > np.random.rand():
+  return random.randrange(self.action_size), explore_probability
+else:
+  return np.argmax(self.model.predict(state)), explore_probability
+```
 ## Cómo ejecutar el programa
 ***
 El código fue escrito y ejecutado a través de Google Colab, cuyo link es: [Desafío 4](https://colab.research.google.com/drive/1miI-82iaWqrZZuBoPvfki4pZPzNKjrib#scrollTo=JJTmP_MUXHZx)
