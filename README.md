@@ -4,8 +4,7 @@
 2. [Descripción de la solución](#descripción-de-la-solución)
 3. [Cómo ejecutar el programa](#cómo-ejecutar-el-programa)
 4. [Análisis de resultados](#análisis-de-resultados)
-5. [Video explicativo](#video-explicativo)
-6. [Coevaluación](#coevaluación)
+5. [Coevaluación](#coevaluación)
 ## Descripción del problema
 ***
 Para este desafío se utilizó el ambiente Ant-V2 de Mujoco Environments. Este ambiente consta de una hormiga representada por un robot que posee un torso y 4 patas unidas a él. Cada pata, además, está dividida en 2 partes.
@@ -57,10 +56,9 @@ El código fue escrito y ejecutado a través de Google Colab, cuyo link es: [Des
 Al final del código se tienen dos entrenamientos renderizados, los cuales corresponden a entrenamientos con y sin Prioritized Experience Replay, a modo de poder realizar una comparación y sacar conclusiones.
 ## Análisis de resultados
 ***
-c
-## Video explicativo
-***
-Para una mejor comprensión del problema y su resolución, se adjunta un video explicativo en el siguiente [link]().
+Si bien se logró conseguir que la hormiga avance una pequeña distancia a la derecha, para conseguirlo se tuvo que realizar una gran cantidad de pruebas con distintos parámetros e implementaciones, siendo los descritos en la descripción de la solución los que mejores resultados dieron.
+
+Pudimos observar que con la implementación del Prioritized Experience Replay la hormiga lograba encontrar en la mayoría de las pruebas una estrategia que le permitiera avanzar una pequeña distancia, a diferencia de las pruebas realizadas sin esta implementación, donde en este caso en la mayoría de las pruebas la hormiga realizaba un par de movimientos para luego quedarse totalmente quieta hasta el final del entrenamiento. Sin embargo, aún fue necesario realizar una gran cantidad de pruebas para lograr que la hormiga encuentre una buena estrategia de avance. Esto nos ayuda a concluir que la especificación de parámetros no necesariamente es el factor más influyente para lograr un mejor aprendizaje, ya que los entrenamientos que realizamos fueron con un máximo de 20 episodios (1 hora y media de duración en promedio), por lo que es probable que si se aumenta el número de episodios la hormiga logre encontrar una estrategia aún mejor que le permita avanzar más eficazmente.
 ## Coevaluación
 ***
 A continuación, tablas de coevaluación según estos criterios: [Criterios de coevaluación](https://docs.google.com/document/d/1YSba-KNP-ReP_TJePQkCHXJ1x4_MtOizQPIrNnriZbw/edit#)
@@ -68,39 +66,39 @@ A continuación, tablas de coevaluación según estos criterios: [Criterios de c
 
 |                     | Esteban González | Carlos Núñez | Priscilla Riffo | Katherine Sepúlveda |
 | ------------------- | :--------------: | :----------: | :-------------: | :-----------------: |
-| Esteban González    | | | | |
+| Esteban González    | |X|X|X|
 | Carlos Núñez        |X| |X|X|
-| Priscilla Riffo     | | | | |
-| Katherine Sepúlveda | | | | |
+| Priscilla Riffo     |X|X| |X|
+| Katherine Sepúlveda |X|X|X| |
 2. **Integración**
 
 |                     | Esteban González | Carlos Núñez | Priscilla Riffo | Katherine Sepúlveda |
 | ------------------- | :--------------: | :----------: | :-------------: | :-----------------: |
-| Esteban González    | | | | |
+| Esteban González    | |X|X|X|
 | Carlos Núñez        |X| |X|X|
-| Priscilla Riffo     | | | | |
-| Katherine Sepúlveda | | | | |
+| Priscilla Riffo     |X|X| |X|
+| Katherine Sepúlveda |X|X|X| |
 3. **Responsabilidad**
 
 |                     | Esteban González | Carlos Núñez | Priscilla Riffo | Katherine Sepúlveda |
 | ------------------- | :--------------: | :----------: | :-------------: | :-----------------: |
-| Esteban González    | | | | |
+| Esteban González    | |X|X|X|
 | Carlos Núñez        |X| |X|X|
-| Priscilla Riffo     | | | | |
-| Katherine Sepúlveda | | | | |
+| Priscilla Riffo     |X|X| |X|
+| Katherine Sepúlveda |X|X|X| |
 4. **Contribución**
 
 |                     | Esteban González | Carlos Núñez | Priscilla Riffo | Katherine Sepúlveda |
 | ------------------- | :--------------: | :----------: | :-------------: | :-----------------: |
-| Esteban González    | | | | |
+| Esteban González    | |X|X|X|
 | Carlos Núñez        |X| |X|X|
-| Priscilla Riffo     | | | | |
-| Katherine Sepúlveda | | | | |
+| Priscilla Riffo     |X|X| |X|
+| Katherine Sepúlveda |X|X|X| |
 5. **Resolución de conflictos**
 
 |                     | Esteban González | Carlos Núñez | Priscilla Riffo | Katherine Sepúlveda |
 | ------------------- | :--------------: | :----------: | :-------------: | :-----------------: |
-| Esteban González    | | | | |
+| Esteban González    | |X|X|X|
 | Carlos Núñez        |X| |X|X|
-| Priscilla Riffo     | | | | |
-| Katherine Sepúlveda | | | | |
+| Priscilla Riffo     |X|X| |X|
+| Katherine Sepúlveda |X|X|X| |
